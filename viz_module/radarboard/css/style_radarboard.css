@@ -1,0 +1,242 @@
+/* Grundlegende Stile */
+
+/* Standard-Schriftarten für den gesamten Körper des Dokuments festlegen */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  overflow: hidden; /* Verhindert das Scrollen auf der Seite */
+}
+
+/* Stil für das obere Titel-Element */
+
+/* Stile für den Haupttitel festlegen */
+#title-top {
+  width: 127%;
+  display: inline-block;
+  text-align: center; /* Zentriert den Text */
+  font-size: 25px;
+  color: #535353;
+  padding-top: 10px;
+  font-family: "Arial";
+  font-weight: 600; /* Macht den Text halbfett */
+}
+
+/* Positionierung der oberen Legende */
+
+/* Stellt die Legende an einer festen Position im Fenster dar */
+#legende-top {
+  position: absolute;
+  display: inline-block;
+  top: 200px;
+  left: 11px;
+}
+
+#legende-grau-top {
+  position: absolute;
+  display: inline-block;
+  top: 70px;
+  left: 85px;
+}
+
+/* Grundstil für den Tooltip */
+
+/* Allgemeiner Tooltip-Stil, der für beide Tooltip-Typen (`.tooltip` und `.tooltip-text`) gilt */
+.tooltip, .tooltip-text {
+  visibility: hidden; /* Tooltips sind standardmäßig unsichtbar */
+  text-align: left;
+  padding: 5px;
+  border-radius: 6px; /* Abgerundete Ecken */
+  position: absolute; /* Positioniert den Tooltip relativ zum Elternelement */
+  z-index: 1;
+  opacity: 0; /* Transparent, sodass er unsichtbar ist */
+  transition: opacity 0.3s; /* Glatter Übergangseffekt für die Opazität */
+}
+
+/* Spezifische Stile für den `.tooltip` */
+.tooltip {
+  background-color: #555;
+  color: #fff;
+  left: 0;
+  top: -30px;
+}
+
+/* Spezifische Stile für den `.tooltip-text` */
+/* .tooltip-text {
+  top: 20px;
+  max-width: 300px; 
+  min-width: 240px; 
+  background-color: #dbdbdbc9;
+  color: #000;
+  font-size: 12px;
+} */
+
+.tooltip-text {
+  max-width: 300px; 
+  min-width: 260px; 
+  background-color: #dbdbdbc9;
+  color: #000;
+  font-size: 13px;
+  left: 50%;          /* Positionieren Sie den Tooltip in der Mitte des Elternelements */
+  transform: translateX(-50%);  /* Verschieben Sie es um 50% seiner eigenen Breite zurück */
+  top: 100%;          /* Positionieren Sie den Tooltip direkt unter dem Elternelement */
+  margin-top: 5px;    /* Ein wenig Abstand von der oberen Kante */
+}
+
+
+/* Container, der den Tooltip enthält */
+.tooltip-container {
+  position: relative; 
+  display: inline-block;
+}
+
+/* Effekt, um den Tooltip beim Überfahren mit der Maus sichtbar zu machen */
+.tooltip-container:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Stile für das Selektor-Element */
+#selector {
+  display: inline-block;
+  padding-top: 8px;
+  padding-left: 510px;
+  font-family: "Arial";
+  font-size: 14px;
+  font-weight: bold;
+  color: #595959;
+}
+
+/* Hauptdiagramm-Container-Stil */
+#chartdiv {
+  width: 100%;
+  height: 99vh; /* Nimmt fast die gesamte Fensterhöhe ein */
+  background-color: #ffffff;
+}
+
+/* Stil für die ausklappbaren Buttons (Collapsible) */
+
+/* Grundlegende Button-Stile */
+.collapsible {
+  border: 0px solid #595959;
+  background-color: white;
+  padding: 2px 5px;
+  width: 99.5%;
+  font-size: 14px;
+  text-align: left;
+  cursor: pointer; /* Ändert den Mauszeiger beim Überfahren des Buttons */
+}
+
+/* Spacer-Element zur Trennung von UI-Elementen */
+.spacer {
+  display: block;
+  height: 0px; /* Ursprünglich als Platzhalter gedacht, ohne Höhe */
+  width: 100%;
+  margin: 0 auto;
+  content: "";
+}
+
+/* Hover- und aktive Stile für die ausklappbaren Buttons */
+.collapsible:hover, .active {
+  background-color: #e7e7e7; /* Hintergrundfarbe beim Überfahren und wenn aktiv */
+}
+
+/* Besonderer Stil für aktive (ausgeklappte) Buttons */
+.active {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+/* Pseudo-Elemente für das Plus- und Minus-Symbol auf den ausklappbaren Buttons */
+.collapsible:after, .active:after {
+  color: #555555;
+  float: left;
+  margin-left: 0px;
+  padding: 0px 10px 0px 0px;
+  font-weight: bold;
+}
+
+.collapsible:after {
+  content: '\002B'; /* Plus-Zeichen */
+}
+
+.active:after {
+  content: "\2212"; /* Minus-Zeichen */
+}
+
+/* Stil für den sichtbaren Inhalt, wenn ein Button ausgeklappt ist */
+.content {
+  width: 100%;
+  padding: 0 0px;
+  max-height: 0; /* Standardmäßig unsichtbar, da maximale Höhe 0 ist */
+  overflow: hidden; /* Verhindert Scrollen innerhalb des Inhalts */
+  transition: max-height 0.2s ease-out; /* Übergangseffekt für die max-height Änderung */
+}
+
+.content-frame {
+  border: 0;
+  width: 100%;
+  height: 92vh;
+}
+
+/* Spezifischer Stil für den Standard-Button (grauer Button) */
+.default {
+  border-color: #595959;
+  color: #555555;
+}
+
+.default:hover {
+  background: #e7e7e7; /* Hintergrundfarbe beim Überfahren des Buttons */
+}
+
+/* Radiobutton-Stil, um ihn mit dem umgebenden Text auszurichten */
+input[type="radio"] {
+  vertical-align: text-top;
+}
+
+/* Wrapper für den Inhalt, um 100% der Fensterhöhe zu füllen */
+.content-wrapper {
+  width: 100%;
+  height: 100vh;
+}
+
+/* Stile für Dropdown-Container im Titelbereich */
+#title-dropdown-container {
+  width: 100%;
+  background-color: #fefdfb;
+  color: #212327;
+}
+
+/* Einheitlicher Stil für Filtertext */
+#filter0, #filter1, #filter2, #filter3, #filter4 {
+  font-size: 10px;
+}
+
+/* Dropdown-Div-Stile für die linke und rechte Seite */
+#dropdown-div-links {
+  display: inline-block;
+  text-align: left;
+}
+
+#dropdown-div-rechts {
+  position: absolute;
+  display: block;
+  right: 8px;
+  top: 8px;
+}
+
+/* Stil für den Haupttitel im Dropdown */
+#title-div {
+  width: 20%; 
+  display: inline-block;
+  text-align: center; 
+  font-size: 15px;
+  font-weight: bold; /* Setzt den Text fett */
+  vertical-align: sub; /* Stellt sicher, dass der Titel in der Nähe des Unterrandes ausgerichtet ist */
+}
+
+/* Stil für den Toggle Filter Button */
+#toogleFilterButton {
+  font-size: 10px; /* Setzt die Schriftgröße */
+}
+
+
+

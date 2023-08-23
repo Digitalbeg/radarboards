@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Technologisches Radarboard - Gesamtprogramm</title>
+    <link rel="stylesheet" href="./css/style_radarboard.css">
+    <style>
+        /* Stil für den Titeltext */
+        .title-text {
+            padding-left: 27em;
+            font-weight: bold;
+            font-size: 15px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <!-- JavaScript-Dateien und Skripte -->
+    <!-- Zugriff über CDN für public access -->
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/radar.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Responsive.js"></script>
+
+    <!-- lokaler Zugriff für offline version -->
+    <!-- <script src="../../lib/dist/am/index.js"></script>
+    <script src="../../lib/dist/am/xy.js"></script>
+    <script src="../../lib/dist/am/radar.js"></script>
+    <script src="../../lib/dist/am/themes/Animated.js"></script>
+    <script src="../../lib/dist/am/themes/Responsive.js"></script> -->
+    <!-- Titelbereich -->
+
+    <div class="title-text">
+        Demo-Daten Technologische Radarboards - INVITE Gesamtprogramm
+    </div>
+
+    <!-- Dimensionenauswahl -->
+    <div id="selector">
+        <label class="tooltip-container">Dimensionen
+            <input type="radio" id="Tech-Dimensionen" value="Tech-Dimensionen" name="dataset" checked="true"
+                onclick="changeDatensatz('Tech-Dimensionen');" />
+            <span class="tooltip-text">Anzeige Technologie Dimensionen.<br>Der Farbcode stellt die Schwerpunkte der
+                Projekte in % dar.</span>
+        </label>
+        <label class="tooltip-container">&nbsp;&nbsp;Unterdimensionen
+            <input type="radio" id="Tech-UnterDimensionen" value="Tech-UnterDimensionen" name="dataset"
+                onclick="changeDatensatz('Tech-UnterDimensionen');" />
+            <span class="tooltip-text">Anzeige Technologie Unterdimensionen.<br>Der Farbcode stellt die Schwerpunkte der
+                Projekte in % dar.</span>
+        </label>
+    </div>
+
+    <!-- Legende -->
+    <div id="legende-top">
+        <img id="legend-img" width="221" height="120" src="./img/legende_techdim_einfarbig_breit.svg"
+            title="Der Farbcode zeigt die Ausprägung der Technologie Dimensionen in den Projekten">
+
+    </div>
+
+    <!-- Hauptdiagrammbereich -->
+    <div id="chartdiv"></div>
+
+    <!-- projektspezifische Daten und Scripte -->
+    <script src="./daten/projektdaten_radarboard_constants.js"></script>
+
+    <!-- <script src="./daten/projektdaten_radarboard_demo_json.js"></script> -->
+    <script src="./daten/demo_projektdaten_radarboard_json.js"></script>
+
+    <script src="./js/script_radarboard_multichart_tech_dim.js"></script>
+    <script src="./js/script_radarboard_chart_tech_dim.js"></script>
+    <script src="./js/script_radarboard_chart_tech_udim.js"></script>
+
+
+    <script>
+        /* JavaScript für das Einlesen der URL-Parameter und das Ändern des ausgewählten Datensatzes */
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        var nameDatensatz = urlParams.get('nameDatensatz');
+        if (nameDatensatz) {
+            changeDatensatz(nameDatensatz);
+        };
+        if (nameDatensatz == 'Tech-Dimensionen') { document.getElementById("Tech-Dimensionen").checked = true; }
+        else if (nameDatensatz == 'Tech-UnterDimensionen') { document.getElementById("Tech-UnterDimensionen").checked = true; }
+    </script>
+
+</body>
+
+</html>

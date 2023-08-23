@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Radarboard Einzelprojekt</title>
+  <link rel="stylesheet" href="./css/style_radarboard.css">
+</head>
+
+<body>
+  <!-- Zugriff über CDN für public access -->
+  <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/radar.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/themes/Responsive.js"></script>
+
+
+  <!-- lokaler Zugriff für offline version -->
+  <!--   <script src="../../lib/dist/am/index.js"></script>
+  <script src="../../lib/dist/am/xy.js"></script>
+  <script src="../../lib/dist/am/radar.js"></script>
+  <script src="../../lib/dist/am/themes/Animated.js"></script>
+  <script src="../../lib/dist/am/themes/Responsive.js"></script> -->
+
+
+  <!-- Legende -->
+  <div id="legende-grau-top">
+    <img id="legend-img" width="264" height="130" src="./img/legende_graustufen_einzelprojekt.svg"
+      title="Der Farbcode zeigt die Ausprägung der Technologie Dimensionen in den Projekten">
+  </div>
+
+  <div id="chartdiv"></div>
+
+  <!-- <script src="./daten/projektdaten_radarboard_einzel_projekte.js"></script> -->
+
+  <!-- konstanten und color definitionnen für alle radarboards -->
+  <script src="./daten/projektdaten_radarboard_constants.js"></script>
+
+  <!-- json daten für alle radarboards -->
+  <script src="./daten/demo_projektdaten_radarboard_json.js"></script>
+
+  <!-- Einzelradarboard als chart -->
+  <script src="./js/script_radarboard_einzelprojekt_udim.js"></script>
+
+</body>
+
+</html>
