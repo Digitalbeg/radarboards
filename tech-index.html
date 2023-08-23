@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digitalbegleitung Radarboards</title>
+    <style>
+      /* Stil für die Schaltflächen */
+#button1,
+#button2 {
+    font-size: 18px; /* Größe der Schrift */
+    cursor: pointer; /* Hand-Cursor beim Überfahren */
+    background-color: #f0f0f0; /* Hintergrundfarbe der Schaltfläche */
+    border: 1px solid #ccc; /* Rand der Schaltfläche */
+    padding: 10px 15px; /* Innenabstand */
+    text-align: center; /* Text zentrieren */
+    display: block; /* Block-Elemente untereinander anzeigen */
+    transition: background-color 0.3s; /* Überblendungseffekt beim Überfahren */
+    margin-bottom: 5px; /* Abstand zum nächsten Element */
+    width: fit-content; /* Breite basierend auf Inhalt */
+}
+
+
+/* Stil für die Schaltflächen beim Überfahren */
+#button1:hover,
+#button2:hover {
+    background-color: #e0e0e0; /* Hintergrundfarbe beim Überfahren */
+}
+
+/* Stil für die Bildschirm-Warnung */
+#screenWarnung {
+    display: none; /* Standardmäßig versteckt */
+    color: red; /* Textfarbe */
+    font-weight: bold; /* Fettdruck */
+    font-size: 26px; /* Schriftgröße */
+    margin-bottom: 20px; /* Abstand zum nächsten Element */
+}
+
+    </style>
+</head>
+
+<body>
+    <!-- Warnmeldung für kleine Bildschirmgrößen oder Mobilgeräte -->
+    <div id="screenWarnung">
+        Diese Anwendung ist für größere Bildschirme optimiert. Maximieren Sie bitte Ihr Browserfenster, verschieben Sie die Anwendigung auf einen größeren Bildschirm oder verringern Sie den Browser-Zoom, um die bestmögliche Erfahrung zu gewährleisten.
+        <br><br>Diese Meldung verschwindet dann automatisch.<br>
+    </div>
+
+    <!-- Startschaltfläche für die Visualisierung des Gesamtprogramms -->
+    <button id="button1" data-href="viz_module/radarboard/radarboards_gesamtprogramm.html">
+        Visualisierung Gesamtprogramm (Demo Daten) - Technologie Dimensionen &rarr;
+    </button>
+
+    <!-- Startschaltfläche für die Visualisierung der Projekte -->
+    <button id="button2" data-href="viz_module/radarboard/radarboards_projekte.html">
+        Visualisierung Projekte (Demo Daten) - Technologie Dimensionen &rarr;
+    </button>
+
+    <!-- Verknüpfung zum externen JavaScript-Code -->
+    <script src="index.js"></script>
+</body>
+
+</html>
